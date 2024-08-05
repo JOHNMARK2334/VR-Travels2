@@ -1,0 +1,26 @@
+.btn-custom {
+    background-color: #000E8C;
+    border: 3px solid #000E8C;
+    color: white;
+    border-radius: 10px;
+}
+.btn-custom:hover {
+    background-color: white;
+    color: #000E8C;
+    font-weight: bold;
+    border: 3px solid #000E8C;
+    border-radius: 10px;
+}
+.btn-customs{
+    background-color: white;
+    color: #000E8C;
+    font-weight: bold;
+    border: 3px solid #000E8C;
+    border-radius: 10px;
+}
+.btn-customs:hover{
+    background-color: #000E8C;
+    border: 3px solid #000E8C;
+    color: white;
+    border-radius: 10px;
+}

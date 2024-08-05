@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In - VR-TRAVELS</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('images/Paris.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .btn-custom {
+            background-color: #000E8C;
+            color: white;
+        }
+        .btn-custom:hover {
+            background-color: #fff;
+            color: #000E8C;
+            border: 3px solid #000E8C;
+            border-radius: 10px;
+        }
+        .form-container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            color: #fff;
+            background-color: transparent;
+            background: rgba(0, 0, 0, 0.7);
+        }
+        .form-container h2 {
+            margin-bottom: 20px;
+        }
+        .error-message {
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container form-container">
+        <h2 class="text-center">Log In</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-custom btn-block">Log In</button>
+            <p class="text-center mt-3">Don't have an account? <a href="signup.html">Sign Up</a></p>
+            <p class="text-center mt-3 error-message" id="errorMessage">Invalid email or password. Please try again.</p>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Predefined login details
+            const predefinedEmail = 'user@example.com';
+            const predefinedPassword = 'password123';
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('errorMessage');
+            
+            if (email === predefinedEmail && password === predefinedPassword) {
+                // Redirect to profile page if login details are correct
+                window.location.href = 'profile.html';
+            } else {
+                // Display error message if login details are incorrect
+                errorMessage.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
