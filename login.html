@@ -38,9 +38,28 @@
             color: red;
             display: none;
         }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #000E8C;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #fff;
+            color: #000E8C;
+            border: 3px solid #000E8C;
+        }
     </style>
 </head>
 <body>
+    <button class="btn btn-secondary back-button" onclick="goBack()">Back to Home</button>
     <div class="container form-container">
         <h2 class="text-center">Log In</h2>
         <form id="loginForm">
@@ -62,6 +81,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
+        function goBack() {
+        window.location.href = 'index.html'; // Redirect to home page
+    }
         document.getElementById('loginForm').addEventListener('submit', function(event) {
             event.preventDefault();
             
