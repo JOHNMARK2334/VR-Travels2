@@ -7,10 +7,15 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background-color: blueviolet;
+            background: linear-gradient(to right, #8f8dc7, #212aa7); /* Example gradient */
             color: black;
-            background-image: url("..htol.jpg");
+            /*background-image: url("../VR-Travels2/images/htol.jpg");*/
+
         }
+        .hero {
+            padding-top: 50px; /* Adjust padding as needed */
+        }
+
         .navbar {
             justify-content: center;
         }
@@ -24,7 +29,7 @@
         }
 
         .navbar-nav .nav-item .nav-link {
-            color: rgb(255, 255, 255);
+            color: rgb(33, 28, 94);
             text-align: center;
             font-weight: bold;
         }
@@ -40,15 +45,54 @@
         .grid-container {
             padding: 20px;
         }
+
+        .grid-container .row {
+            margin: 0;
+            padding-left: 10px; /* Adds padding to the edges */
+            padding-right: 10px;
+        }
+
         .grid-item {
+            padding: 10px; /* Adds padding between images */
             text-align: center;
             margin-bottom: 20px;
         }
+
+        .grid-item {
+            position: relative;
+        }
+
         .grid-item img {
             width: 100%;
-            height: 300px; /* Set a uniform height */
-            object-fit: cover; /* Ensures the image covers the dimensions without distortion */
+            height: 300px; /* Uniform height */
+            object-fit: cover;
             border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .grid-item:hover img {
+            transform: scale(1.05); /* Optional: Add a slight zoom effect on hover */
+        }
+
+        .card-body {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            opacity: 0;
+            color: #ffffff;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .grid-item:hover .card-body {
+            opacity: 1;
         }
         .btn-custom {
             background-color: #000E8C;
@@ -61,6 +105,19 @@
             color: #000E8C;
             font-weight: bold;
             border: 3px solid #000E8C;
+            border-radius: 10px;
+        }
+        .btn-customs{
+            background-color: #ffffff;
+            color: #000E8C;
+            font-weight: bold;
+            border: 3px solid #000E8C;
+            border-radius: 10px;
+        }
+        .btn-customs:hover{
+            background-color: #000E8C;
+            border: 3px solid #000E8C;
+            color: white;
             border-radius: 10px;
         }
         .footer {

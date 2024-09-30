@@ -13,6 +13,7 @@
         }
         .navbar {
             justify-content: center;
+            background-color: rgb(50, 54, 117);
         }
         .navbar-brand{
             font-size: 36px;
@@ -39,16 +40,34 @@
         }
         .grid-container {
             padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
         }
+
         .grid-item {
-            text-align: center;
+            flex: 1 1 calc(33.333% - 20px); /* Three items per row with space */
             margin-bottom: 20px;
+            box-sizing: border-box;
         }
+
         .grid-item img {
             width: 100%;
-            height: 300px; /* Set a uniform height */
-            object-fit: cover; /* Ensures the image covers the dimensions without distortion */
+            height: 200px; /* Adjust height as needed */
+            object-fit: cover;
             border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-item {
+                flex: 1 1 calc(50% - 20px); /* Two items per row on smaller screens */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .grid-item {
+                flex: 1 1 100%; /* One item per row on extra small screens */
+            }
         }
         .btn-custom {
             background-color: #000E8C;
@@ -80,24 +99,53 @@
             border: none;
         }
         .btn-custom:hover {
-            background-color: #000A6A;
+            background-color: #fff;
+            color: #000E8C;
         }
+        .btn-customs{
+            background-color: white;
+            color: #000E8C;
+            font-weight: bold;
+            border: 3px solid #000E8C;
+            border-radius: 10px;
+        }
+        .btn-customs:hover{
+            background-color: #000E8C;
+            border: 3px solid #000E8C;
+            color: white;
+            border-radius: 10px;
+        }
+        .virtual-tour-card .card-body {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .virtual-tour-card:hover .card-body {
+            opacity: 1;
+        }
+
         .virtual-tour-card .btn-view-tour {
             position: absolute;
             bottom: 20px;
             left: 20px;
             display: none;
         }
+
         .virtual-tour-card:hover .btn-view-tour {
             display: block;
-        }
-        .virtual-tour-card:hover .card-body{
-            opacity: 1;
         }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-rgb(50, 54, 117)">
         <h1><a class="navbar-brand" href="#">VR-TRAVELS</a></h1>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
